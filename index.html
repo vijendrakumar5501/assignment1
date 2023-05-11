@@ -1,0 +1,113 @@
+<html>
+    <head>
+        
+    </head>
+    <body style='background:rgb(180, 156, 156)';>
+       <h1 style="text-transform: uppercase;">Render the data</h1>
+        <button style="padding:15px;background:aqua; width:150px;cursor:pointer"  onclick="renderdata1()">page-1</button>
+      
+        <button style="padding:15px;background:aqua; width:150px;cursor:pointer" onclick='renderdata2()'>page-2</button>
+       
+        
+
+        <div  id="problem-statement" style="width:70vh;">
+        <table>
+            <tr>
+                <td style="width:20vh; color:yellow;"></td>
+            </tr>
+        <table>
+            <tr>
+                <td style="width:20vh; color:rgb(123, 5, 5);">
+                </td>
+            </tr>
+        </table></div>
+
+        <!-- scripts -->
+        <script>
+
+
+
+            const problem=[
+                {
+                    title:'201 bitwise and of number range',
+                    difficulty:'medium',
+                    acceptance:'42%',
+                },
+                {
+                    title:'202 happy numegr',
+                    difficulty:'easy',
+                    acceptance:'54.6%',
+                },
+                {
+                    title:'203,remove linked list element',
+                    difficulty:'hard',
+                    acceptance:'42%',
+                },
+            ]
+            const problem1=[
+                {
+                    title:'206 operator and of roamn range',
+                    difficulty:'medium',
+                    acceptance:'42%',
+                },
+                {
+                    title:'207 wrong number',
+                    difficulty:' medium',
+                    acceptance:'54.6%',
+                },
+                {
+                    title:'208,add  linked list element',
+                    difficulty:'hard',
+                    acceptance:'42%',
+                },
+            ];
+
+                function renderdata1(){  
+                        document.getElementById('problem-statement')
+                        .innerHTML='';
+                        render(problem)
+                    
+                }
+                function renderdata2(){
+                    document.getElementById('problem-statement')
+                        .innerHTML='';
+                        render(problem1)
+
+                }
+
+
+             function render(pdata){
+                 const pElement=document.getElementById('problem-statement');
+                 const tTag=document.createElement('table');
+                 console.log(pdata);
+                 
+                 for(let i=0;i<pdata.length;i++){
+                     const trTag=document.createElement('tr');
+                     const tdEl1=document.createElement('td');
+                     tdEl1.innerHTML=pdata[i].title;
+                     const tdEl2=document.createElement('td');
+                     tdEl2.innerHTML=pdata[i].difficulty;
+                     
+                     const tdEl3=document.createElement('td');
+                     tdEl3.innerHTML=pdata[i].acceptance;
+
+                        trTag.appendChild(tdEl1);
+                        trTag.appendChild(tdEl2);
+                        trTag.appendChild(tdEl3);
+
+                        tTag.appendChild(trTag);
+
+
+                    
+                    }
+                    pElement.appendChild(tTag);
+
+
+            }
+            
+            
+
+
+        </script>
+    </body>
+</html>
